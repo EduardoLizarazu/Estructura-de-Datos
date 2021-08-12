@@ -2,35 +2,30 @@
 // de areas, serie, operaciones aritmeticas, publicar en su github
 #include<iostream>
 #include<conio.h>
-
+#include<math.h>
 using namespace std;
 
+void menu();
+int areaTriangulo(int b, int h);
+int funcionAlgebraicaDeSerie(int repeticiones, int potencia);
 int main(){
     int op;
-    float x,y,res;
+    int x, y,res;
     
     op=0;
     while(op!=4){
-        cout<<"\n\t---MENU---"<<endl;
-        cout<<"Opcion 1 => Calcular Areas de un triangulos"<<endl;
-        cout<<"Opcion 2 => Calcular series"<<endl;
-        cout<<"Opcion 3 => Calcular Operaciones aritmicas"<<endl;
-        cout<<"Opcion 4 => Salir"<<endl;
+        menu();
         cout<<"Ingrese una de las opciones => ";cin>>op;
         res=0;
         switch (op){
             case 1:
                 cout<<"Ingrese la base y la altura => ";cin>>x>>y;
-                res = x * y;
-                cout<<"El area es => "<<res<<endl;
+                cout<<"Respuesta => "<<areaTriangulo(x,y)<<endl;
                 break;
             case 2:
                 cout<<"Ingrese numero de repeticiones => ";cin>>x;
-                cout<<"Ingrese un numero => ";cin>>y;
-                for (int i = 0; i < x; i++){
-                    res += y;
-                }
-                cout<<"Respuesta => "<<res<<endl;
+                cout<<"Ingrese numero de potencia => ";cin>>y;
+                cout<<"Respuesta => "<<funcionAlgebraicaDeSerie(x, y)<<endl;
                 break;
             case 3:
                 cout<<"Ingrese dos numeros => ";cin>>x>>y;
@@ -48,4 +43,29 @@ int main(){
     cout<<"Fin del programa";
     getch();
     return 0;
+}
+
+void menu() {
+    cout<<"\n\t---MENU---"<<endl;
+    cout<<"Opcion 1 => Calcular Areas de un triangulos"<<endl;
+    cout<<"Opcion 2 => Calcular series"<<endl;
+    cout<<"Opcion 3 => Calcular Operaciones aritmicas"<<endl;
+    cout<<"Opcion 4 => Salir"<<endl;
+    
+}
+
+int areaTriangulo(int b, int h){
+    int res=0;
+    res = b * h;
+    return res;
+}
+
+int funcionAlgebraicaDeSerie(int repeticiones, int potencia){
+    int res=0;
+    int aux=0;
+    for (int i = 0; i < repeticiones; i++){
+        aux = pow(2,potencia);
+        res += aux;
+    }
+    return res;
 }
