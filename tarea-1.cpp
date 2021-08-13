@@ -8,15 +8,15 @@ using namespace std;
 void menu();
 int areaTriangulo(int b, int h);
 int funcionAlgebraicaDeSerie(int repeticiones, int potencia);
+int funcionAlgebraica(int n1, int n2);
 int main(){
     int op;
-    int x, y,res;
+    int x, y;
     
     op=0;
     while(op!=4){
         menu();
         cout<<"Ingrese una de las opciones => ";cin>>op;
-        res=0;
         switch (op){
             case 1:
                 cout<<"Ingrese la base y la altura => ";cin>>x>>y;
@@ -29,8 +29,7 @@ int main(){
                 break;
             case 3:
                 cout<<"Ingrese dos numeros => ";cin>>x>>y;
-                res = x+y/2;
-                cout<<"Respuesta => "<<res<<endl;
+                cout<<"Respuesta => "<<funcionAlgebraica(x, y)<<endl;
                 break;
             case 4:
                 cout<<"Saliendo del programa ..."<<endl;
@@ -67,5 +66,11 @@ int funcionAlgebraicaDeSerie(int repeticiones, int potencia){
         aux = pow(2,potencia);
         res += aux;
     }
+    return res;
+}
+
+int funcionAlgebraica(int n1, int n2){
+    int res;
+    res = n1+n2;
     return res;
 }
