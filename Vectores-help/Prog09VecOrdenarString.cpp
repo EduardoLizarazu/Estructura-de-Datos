@@ -1,6 +1,7 @@
 
 #include<iostream>
 #include<conio.h>
+#include "string.h"
 using namespace std;
 #define NMAX 100 
 void LeerVec(string V[], int n);
@@ -9,9 +10,9 @@ void BubleSort(string V[],int n);
 int main(){
 	string A[NMAX]; int n;
 // LEER VECTOR A, B -- juan
-    cout<<"Tamaño del vector:";cin>>n;
+    cout<<"Tamaï¿½o del vector:";cin>>n;
 	cout<<"Datos del vector"<<endl;
-	LeerVec(A,n);  // invocando al subprograma LeerVec(vector, tamaño)
+	LeerVec(A,n);  // invocando al subprograma LeerVec(vector, tamaï¿½o)
 	BubleSort(A,n);
 	
 // ESCRIBIR RESULTADO ORDENADO
