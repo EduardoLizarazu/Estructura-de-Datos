@@ -1,5 +1,5 @@
 #pragma once
-#define MAX 50
+#define MAX 10
 class Matriz
 {
 private: 

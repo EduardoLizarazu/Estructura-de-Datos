@@ -1,7 +1,9 @@
-#include "iostream"
+#include <iostream>
 #include "Matriz.h"
 
 using namespace std;
+
+Matriz::Matriz(){}
 
 Matriz::Matriz(int _n, int _m){
 	n = _n;
