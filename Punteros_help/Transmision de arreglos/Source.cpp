@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/*	TRANSMICION DE ARREGLOS
+/*	TRANSMISION DE ARREGLOS
 * 
 * Hallar el maximo elemento de un arreglo
 * 
