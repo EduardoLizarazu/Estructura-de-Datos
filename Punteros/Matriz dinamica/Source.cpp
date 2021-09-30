@@ -17,14 +17,22 @@ using namespace std;
 */
 
 void pedirDatos();
+void mostrarMatriz(int**, int, int);
 
 //Esto se conoce como puntero de punteros, porque voy a dar un puntero hacia
 // otro puntero
 int** puntero_matriz, nFilas, nCol;
 
 int main() {
+	pedirDatos();
+	mostrarMatriz(puntero_matriz, nFilas, nCol);
 
-
+	// LIBERAR LA MEMORIA QUE HEMOS UTILIZADO EN LA MATRIZ
+	for (int i = 0; i < nFilas; i++)
+	{
+		delete[] puntero_matriz[i];
+	}
+	delete[] puntero_matriz;
 
 	system("pause");
 	return 0;
@@ -48,7 +56,7 @@ void pedirDatos() {
 	}
 
 
-	cout << "\nDigitando elementos de la matriz: ";
+	cout << "\nDigitando elementos de la matriz: \n";
 	for (int i = 0; i < nFilas; i++)
 		for (int j = 0; j < nCol; j++)
 		{
@@ -56,4 +64,14 @@ void pedirDatos() {
 			// puntero_matriz[i][j]
 			cin >> *(*(puntero_matriz + i) + j);
 		}
+}
+
+void mostrarMatriz(int **puntero_matriz, int nFilas, int nCol) {
+	cout << "\n\nImprimiendo matriz: \n";
+	for (int i = 0; i < nFilas; i++)
+		for (int j = 0; j < nCol; j++)
+		{
+			cout << *(*(puntero_matriz + i) + j) << " ";
+		}
+	cout << endl;
 }
