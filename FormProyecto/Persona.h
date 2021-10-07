@@ -1,6 +1,5 @@
 #pragma once
-#include <string>
-#include <iostream>
+#include "string"
 using namespace std;
 class Persona
 {
@@ -9,11 +8,9 @@ private:
 	int edad;
 public:
 	Persona(string, int);
-	~Persona();
-	void mostrarPersona();
-	void set_nombre(string);
 	string get_nombre();
-	void set_edad(int);
+	void set_nombre(string nom);
 	int get_edad();
+	void set_edad(int tam);
+	void mostrarPersona();
 };
-
