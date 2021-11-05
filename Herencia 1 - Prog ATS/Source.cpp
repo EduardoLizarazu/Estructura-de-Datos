@@ -7,7 +7,6 @@
 using namespace std;
 
 int main() {
-
 	// CLASE PERSONA
 	Persona persona1("Eduardo", 20);
 	persona1.mostrarPersona();
